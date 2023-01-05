@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+p {
+  display: inline;
+  font-size: 40px;
+  margin-top: 0px;
+}
+</style>
+<script>
+  // The data/time we want to countdown to
+  var countDownDate = new Date("Jan 6, 2023 00:0:00 GMT-08:00").getTime();
+  // var countDownDate = new Date().getTime();
+
+  console.log(countDownDate)
+  // Run myfunc every second
+  var myfunc = setInterval(function() {
+
+  var now = new Date().getTime();
+  var timeleft = countDownDate - now;
+      
+  // Calculating the days, hours, minutes and seconds left
+  var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+      
+  // Result is output to the specific element
+  document.getElementById("days").innerHTML = days + " Days "
+  document.getElementById("hours").innerHTML = hours + " Hours " 
+  document.getElementById("mins").innerHTML = minutes + " Minutes " 
+  document.getElementById("secs").innerHTML = seconds + " Seconds " 
+      
+  // Display the message when countdown is over
+  if (timeleft < 0) {
+      clearInterval(myfunc);
+      document.getElementById("days").innerHTML = ""
+      document.getElementById("hours").innerHTML = "" 
+      document.getElementById("mins").innerHTML = ""
+      document.getElementById("secs").innerHTML = ""
+      document.getElementById("end").style.display = 'block';  
+      document.getElementById('message').style.display = "inline";
+      document.getElementById('count').style.display = "none";
+      document.getElementById('pink').style.backgroundColor = "#F9629F";
+
+
+
+  }
+  }, 1000);
+  </script>
+</head>
+
+
+
+<body id="pink">
+  <div id="count">
+    <p id="days"></p>
+    <br>
+    <p id="hours"></p>
+    <br>
+    <p id="mins"></p>
+    <br>
+    <p id="secs"></p>
+  </div>
+  <div class="container-fluid text-center" id="message">
+
+    
+    <h1 class="text-white" id="end">Happy Birthday Baby &#10084</h1>
+    <br>
+    <br>
+    <h3 class="text-white">For my very special one and only</h3>
+    <br>
+    <br>
+    <p class="text-white" id="text">Happy birthday my love~ I hope you waiting for the countdown to end! Isn't this a neat suprise!!! I hope this actually works or else you won't be able to see this. I know you have been having a few rough couple of days but just remember that I love you so much. I will always be by your side no matter what.
+      I miss all the things we did together. Going out to movies, the night market, fancy restaurants. Everything we do together makes me so happy. I feel so loved when I'm having a rough day and you always find a way to cheer me up. I know it's hard for us to see each other but I will plan something for us when all of this is done. 
+      I know this isn't the best gift I can give you. But it's something you can keep until the next time I see you. 
+      <br>
+      <br>
+      Don't worry~ We can go wherever you want when I see you. We can go to Castle Fun Park, the movies, another fancy restaurant~~~ We can just even have a nice simple picnic or walk around the park. I really do love you so much baby. It's sometimes just sad when you're not with me. 
+      Ya know... I'm happy to take you and just run away when all of this is gone. I just want you and I. No one else. I mean kids are cool too bb~ Don't worry! We could travel around the world, go to Japan together, Disney Land, Hawaii~ Anywhere our hearts desire we could just run away.
+      <br>
+      <br>
+      I love you with all my heart baby! Please always remember that. If it's the only thing you take away from this present just know that I love you and you only. Please have a great birthday and make sure you enjoy yourself. You know I don't ever want you sad~
+      <br>
+      <br>
+      Thank you so much for all the amazing memories for the past 2 years and more. It's really been the best journey of my life and seriously right now I don't know what I would do without you. Everything feels so dull without you. I haven't had as much fun in the past 20 years compared to the past 2 years with you. 
+      I've done so much with you, I've done so many cools things, I've spent the past 2 years with the love of my life, the person of my dreams, and my true one and only. I really hope we can spend a couple of hours together with you soon. I will be waiting til that day comes, and when it comes I'm gonna savour every minute &#10084
+    </p> 
+
+
+
+    <div class="ballons text-center" id="ballons">
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+      <div class="balloon"></div>
+    </div>
+    
+
+  </div>
+    
+    
+</body>
+</html>
